@@ -1,10 +1,15 @@
+import Header from 'components/Header'
 import React from 'react'
 
 const Inventory = () => {
   return (
-    <div>
-      Inventory items
-    </div>
+    <main className='dashboard wrapper'>
+        <Header
+            title={`Inventory page`}
+            description="Manage inventory"
+        />
+        All inventory 
+    </main>
   )
 }
 

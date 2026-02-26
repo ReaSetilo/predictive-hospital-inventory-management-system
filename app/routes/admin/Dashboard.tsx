@@ -1,10 +1,15 @@
+import Header from 'components/Header'
 import React from 'react'
 
 const Dashboard = () => {
   return (
-    <div>
-      Dashboard
-    </div>
+    <main className='dashboard wrapper'>
+        <Header
+            title={`Welcome👋`}
+            description="Track activity and manage the system"
+    />
+    Dashboard stuff
+    </main>
   )
 }
 

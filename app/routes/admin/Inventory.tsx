@@ -2,8 +2,9 @@ import Header from 'components/Header'
 import React from 'react'
 import * as Grids from '@syncfusion/ej2-react-grids'
 import { inventoryItems } from '~/constants'
-
+import { useState, useEffect } from 'react'
 const Inventory = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
   return (
     <main className='dashboard wrapper'>
         <Header

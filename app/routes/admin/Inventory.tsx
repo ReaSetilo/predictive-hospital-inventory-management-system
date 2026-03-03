@@ -3,8 +3,8 @@ import React from 'react'
 import * as Grids from '@syncfusion/ej2-react-grids'
 import { inventoryItems } from '~/constants'
 import { useState, useEffect } from 'react'
+
 const Inventory = () => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
   return (
     <main className='dashboard wrapper'>
         <Header
@@ -18,23 +18,22 @@ const Inventory = () => {
           <div className="flex items-center gap-4">
             <p className="p-16-semibold text-gray-500">Total: {inventoryItems.length}</p>
             <button
-              onClick={() => setIsModalOpen(true)}
               className="bg-primary-500 hover:bg-primary-600 text-white px-4 py-2 rounded-lg font-semibold transition-colors flex items-center gap-2"
             >
               <span className="text-xl">+</span> Add
             </button>
           </div>
-        </div>
+      </div>
 
         <Grids.GridComponent
-  dataSource={inventoryItems}
-  allowPaging={true}
-  allowSorting={true}
-  allowFiltering={true}
-  pageSettings={{ pageSize: 10, pageSizes: [10, 25, 50, 100] }}
-  filterSettings={{ type: 'Excel' }}
-  width="100%"
->
+          dataSource={inventoryItems}
+          allowPaging={true}
+          allowSorting={true}
+          allowFiltering={true}
+          pageSettings={{ pageSize: 10, pageSizes: [10, 25, 50, 100] }}
+          filterSettings={{ type: 'Excel' }}
+          width="100%"
+        >
   <Grids.ColumnsDirective>
     <Grids.ColumnDirective
       field="$id"
@@ -83,8 +82,8 @@ const Inventory = () => {
     />
   </Grids.ColumnsDirective>
 
-  <Grids.Inject services={[Grids.Page, Grids.Sort, Grids.Filter]} />
-</Grids.GridComponent>
+      <Grids.Inject services={[Grids.Page, Grids.Sort, Grids.Filter]} />
+    </Grids.GridComponent>
     </main>
   )
 }

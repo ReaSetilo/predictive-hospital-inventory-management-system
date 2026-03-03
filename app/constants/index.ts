@@ -59,6 +59,5 @@ export const inventoryItems = [
     quantity: 1500,
     expiryDate: "2027-03-05T00:00:00.000Z",
     $createdAt: "2026-03-01T08:40:00.000Z",
-    $updatedAt: "2026-03-01T08:40:00.000Z",
   },
 ];

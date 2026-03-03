@@ -65,15 +65,6 @@ const Inventory = () => {
       type="date"
       textAlign="Center"
     />
-
-    <Grids.ColumnDirective
-      field="$updatedAt"
-      headerText="Updated At"
-      width="150"
-      format="yMd"
-      type="date"
-      textAlign="Center"
-    />
   </Grids.ColumnsDirective>
 
   <Grids.Inject services={[Grids.Page, Grids.Sort, Grids.Filter]} />

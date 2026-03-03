@@ -10,6 +10,21 @@ const Inventory = () => {
         title="Inventory Management"
         description="View and manage all inventory items in the system"
       />
+
+      <div className="container">
+        <div className="flex-between mb-6">
+          <h1 className="p-24-semibold text-dark-100">Inventory items</h1>
+          <div className="flex items-center gap-4">
+            <p className="p-16-semibold text-gray-500">Total: {inventoryItems.length}</p>
+            <button
+              onClick={() => setIsModalOpen(true)}
+              className="bg-primary-500 hover:bg-primary-600 text-white px-4 py-2 rounded-lg font-semibold transition-colors flex items-center gap-2"
+            >
+              <span className="text-xl">+</span> Add
+            </button>
+          </div>
+        </div>
+
         <Grids.GridComponent
   dataSource={inventoryItems}
   allowPaging={true}

@@ -1,14 +1,15 @@
 import React from 'react'
 import {ComboBoxComponent} from "@syncfusion/ej2-react-dropdowns";
 import {ButtonComponent} from "@syncfusion/ej2-react-buttons";
+import Header from 'components/Header'
 import useState from 'react'
 const oderInventory = () => {
   const handleSubmit = async () => {};
   const [formData, setFormData] = useState({
-    name: "",
-    category: "",
-    quantity: 1
-  });
+  name: "",
+  category: "",
+  quantity: 1
+});
 
   const handleChange = (field: string, value: string | number) => {
     setFormData((prev) => ({

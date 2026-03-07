@@ -1,5 +1,6 @@
 import React from 'react'
 import {ComboBoxComponent} from "@syncfusion/ej2-react-dropdowns";
+import {ButtonComponent} from "@syncfusion/ej2-react-buttons";
 const oderInventory = () => {
   const handleSubmit = async () => {};
   return (

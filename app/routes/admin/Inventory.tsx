@@ -25,6 +25,7 @@ const Inventory = () => {
             </button>
           </div>
         </div>
+      </div>
 
         <Grids.GridComponent
   dataSource={inventoryItems}

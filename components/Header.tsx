@@ -1,7 +1,6 @@
 import React from 'react'
 import { useLocation, Link } from 'react-router';
 import { cn } from '~/lib/utils'
-import {ButtonComponent} from "@syncfusion/ej2-react-buttons";
 
 interface Props {
     title: string;

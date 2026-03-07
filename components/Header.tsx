@@ -1,7 +1,7 @@
 import React from 'react'
 import { useLocation, Link } from 'react-router';
 import { cn } from '~/lib/utils'
-import * as Buttons from '@syncfusion/ej2-react-buttons'
+import {ButtonComponent} from "@syncfusion/ej2-react-buttons";
 
 interface Props {
     title: string;
@@ -20,10 +20,10 @@ const Header = ({title, description, ctaText, ctaUrl}: Props) => {
         </article>
         {ctaText && ctaUrl && (
                 <Link to={ctaUrl}>
-                    <Buttons.ButtonComponent type="button" className="button-class !h-11 !w-full md:w-[240px]">
+                    <ButtonComponent type="button" className="button-class !h-11 !w-full md:w-[240px]">
                         <img src="/assets/icons/plus.svg" alt="plus" className="size-5" />
                         <span className="p-16-semibold text-white">{ctaText}</span>
-                    </Buttons.ButtonComponent>
+                    </ButtonComponent>
                 </Link>
                 
         )}

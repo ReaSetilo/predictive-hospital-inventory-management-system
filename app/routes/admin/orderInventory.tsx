@@ -1,8 +1,8 @@
-import React from 'react'
+import React, { useState } from 'react' 
 import {ComboBoxComponent} from "@syncfusion/ej2-react-dropdowns";
 import {ButtonComponent} from "@syncfusion/ej2-react-buttons";
 import Header from 'components/Header'
-import useState from 'react'
+import { cn } from '~/lib/utils'
 const oderInventory = () => {
   const handleSubmit = async () => {};
   const [formData, setFormData] = useState({
@@ -17,7 +17,8 @@ const oderInventory = () => {
       [field]: value,
     }));
   };
-
+const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
   return (
     <main className="flex flex-col gap-10 pb-20 wrapper">
       <Header title="Order new inventory" description="replenish inventory" />

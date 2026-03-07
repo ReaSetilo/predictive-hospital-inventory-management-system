@@ -3,6 +3,19 @@ import {ComboBoxComponent} from "@syncfusion/ej2-react-dropdowns";
 import {ButtonComponent} from "@syncfusion/ej2-react-buttons";
 const oderInventory = () => {
   const handleSubmit = async () => {};
+  const [formData, setFormData] = useState({
+    name: "",
+    category: "",
+    quantity: 1
+  });
+
+  const handleChange = (field: string, value: string | number) => {
+    setFormData((prev) => ({
+      ...prev,
+      [field]: value,
+    }));
+  };
+
   return (
     <main className="flex flex-col gap-10 pb-20 wrapper">
       <Header title="Order new inventory" description="replenish inventory" />

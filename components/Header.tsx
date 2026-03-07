@@ -2,6 +2,8 @@ import React from 'react'
 import { useLocation } from 'react-router';
 import { cn } from '~/lib/utils'
 import {ButtonComponent} from "@syncfusion/ej2-react-buttons";
+import * as Buttons from '@syncfusion/ej2-react-buttons'
+
 interface Props {
     title: string;
     description: string;
@@ -10,7 +12,8 @@ interface Props {
 }
 const Header = ({title, description, ctaText, ctaUrl}: Props) => {
     const location = useLocation();
-  return (
+    
+    return (
     <header className='header'>
         <article>
             <h1 className={cn('text-dark-100', location.pathname === '/' ? 'text-2xl md:text-4xl font-bold' : 'text-xl md:text-2xl font-semibold' )}>{title}</h1>
@@ -18,11 +21,12 @@ const Header = ({title, description, ctaText, ctaUrl}: Props) => {
         </article>
         {ctaText && ctaUrl && (
                 <Link to={ctaUrl}>
-                    <ButtonComponent type="button" className="button-class !h-11 !w-full md:w-[240px]">
+                    <Buttons.ButtonComponent type="button" className="button-class !h-11 !w-full md:w-[240px]">
                         <img src="/assets/icons/plus.svg" alt="plus" className="size-5" />
                         <span className="p-16-semibold text-white">{ctaText}</span>
-                    </ButtonComponent>
+                    </Buttons.ButtonComponent>
                 </Link>
+                
         )}
     </header>
   )

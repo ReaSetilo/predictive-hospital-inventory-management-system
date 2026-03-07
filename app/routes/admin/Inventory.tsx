@@ -23,6 +23,7 @@ const Inventory = () => {
               <span className="text-xl">+</span> Add
             </button>
           </div>
+        </div>
       </div>
 
         <Grids.GridComponent

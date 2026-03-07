@@ -20,7 +20,7 @@ const Inventory = () => {
             <button
               className="bg-primary-500 hover:bg-primary-600 text-white px-4 py-2 rounded-lg font-semibold transition-colors flex items-center gap-2"
             >
-              <span className="text-xl">+</span> Add
+              <span className="text-xl">+</span> order inventory
             </button>
           </div>
         </div>

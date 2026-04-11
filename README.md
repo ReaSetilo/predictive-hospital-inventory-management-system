@@ -12,9 +12,44 @@ A modern, production-ready template for building full-stack React applications u
 - 🔄 Data loading and mutations
 - 🔒 TypeScript by default
 - 🎉 TailwindCSS for styling
+- � In-app notification system
 - 📖 [React Router docs](https://reactrouter.com/)
 
-## Getting Started
+## Notification System
+
+The application includes a comprehensive notification system built with `react-hot-toast` for displaying various types of notifications:
+
+### Types of Notifications
+
+- **Success**: Green notifications for successful operations
+- **Error**: Red notifications for errors and failures
+- **Warning**: Yellow notifications for warnings and alerts
+- **Info**: Default notifications for general information
+
+### Hospital-Specific Notifications
+
+- **Low Stock Alerts**: Warn when inventory items fall below threshold
+- **Expiry Alerts**: Notify when items are approaching expiry date
+- **Order Confirmations**: Confirm successful order placements
+- **Order Rejections**: Notify when orders are rejected with reasons
+
+### Usage
+
+```typescript
+import { showSuccess, showError, showWarning, showLowStockAlert } from '~/lib/notifications';
+
+// Basic notifications
+showSuccess('Operation completed successfully!');
+showError('Something went wrong!');
+showWarning('Please check your input!');
+
+// Hospital-specific notifications
+showLowStockAlert('Paracetamol', 25, 50);
+```
+
+### Configuration
+
+Notifications appear in the top-right corner with a default duration of 4 seconds. The system is configured in `app/root.tsx` with the `Toaster` component.
 
 ### Installation
 

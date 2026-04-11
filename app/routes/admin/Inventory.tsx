@@ -3,8 +3,34 @@ import React from 'react'
 import * as Grids from '@syncfusion/ej2-react-grids'
 import { inventoryItems } from '~/constants'
 import { useState, useEffect } from 'react'
+import { ButtonComponent } from '@syncfusion/ej2-react-buttons'
+import { showLowStockAlert, showExpiryAlert } from '~/lib/notifications'
 
 const Inventory = () => {
+  const checkForAlerts = () => {
+    // Simulate checking inventory for alerts
+    const lowStockThreshold = 50;
+    const expiryThresholdDays = 30;
+
+    inventoryItems.forEach(item => {
+      // Check low stock
+      if (item.quantity < lowStockThreshold) {
+        showLowStockAlert(item.name, item.quantity, lowStockThreshold);
+      }
+
+      // Check expiry (simplified - in real app, calculate days until expiry)
+      if (item.expiryDate) {
+        const expiryDate = new Date(item.expiryDate);
+        const today = new Date();
+        const daysUntilExpiry = Math.ceil((expiryDate.getTime() - today.getTime()) / (1000 * 60 * 60 * 24));
+
+        if (daysUntilExpiry <= expiryThresholdDays && daysUntilExpiry > 0) {
+          showExpiryAlert(item.name, daysUntilExpiry);
+        }
+      }
+    });
+  };
+
   return (
     <main className='dashboard wrapper'>
         <Header
@@ -13,6 +39,15 @@ const Inventory = () => {
         ctaText="Add inventory"
         ctaUrl="/inventory/add"
       />
+
+      <div className="mb-4">
+        <ButtonComponent
+          cssClass="e-primary"
+          onClick={checkForAlerts}
+        >
+          Check for Alerts
+        </ButtonComponent>
+      </div>
 
       
 

@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { ComboBoxComponent } from "@syncfusion/ej2-react-dropdowns"
 import { ButtonComponent } from '@syncfusion/ej2-react-buttons'
 import { cn } from '~/lib/utils'
+import { showSuccess, showError } from '~/lib/notifications'
 import Header from 'components/Header'
 
 const categories = [
@@ -29,17 +30,37 @@ const AddInventory = () => {
     e.preventDefault()
     setError(null)
 
-    if (!formData.itemName.trim()) return setError("Item name is required.")
-    if (!formData.category) return setError("Please select a category.")
-    if (formData.quantity < 1) return setError("Quantity must be at least 1.")
-    if (!formData.expiryDate) return setError("Expiry date is required.")
+    if (!formData.itemName.trim()) {
+      showError("Item name is required.")
+      return setError("Item name is required.")
+    }
+    if (!formData.category) {
+      showError("Please select a category.")
+      return setError("Please select a category.")
+    }
+    if (formData.quantity < 1) {
+      showError("Quantity must be at least 1.")
+      return setError("Quantity must be at least 1.")
+    }
+    if (!formData.expiryDate) {
+      showError("Expiry date is required.")
+      return setError("Expiry date is required.")
+    }
 
     setLoading(true)
     try {
       // TODO: replace with real API call
       await new Promise((res) => setTimeout(res, 1200))
-      console.log("Submitted:", formData)
+      showSuccess(`Successfully added ${formData.itemName} to inventory!`)
+      // Reset form after successful submission
+      setFormData({
+        itemName: "",
+        category: "",
+        quantity: 1,
+        expiryDate: "",
+      })
     } catch {
+      showError("Something went wrong. Please try again.")
       setError("Something went wrong. Please try again.")
     } finally {
       setLoading(false)

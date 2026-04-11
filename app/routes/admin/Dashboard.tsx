@@ -1,4 +1,5 @@
 import Header from 'components/Header'
+import RecentOrdersCard from 'components/RecentOrdersCard'
 import StatsCard from 'components/StatsCard'
 import React from 'react'
 
@@ -53,7 +54,11 @@ const Dashboard = () => {
           />
         </div>
       </section>
-
+      <section>
+        <div>
+          <RecentOrdersCard/>
+        </div>
+      </section>
     </main>
   )
 }

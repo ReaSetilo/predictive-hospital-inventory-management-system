@@ -1,6 +1,5 @@
 import React from 'react'
 import { Link, NavLink, useLoaderData, useNavigate } from 'react-router'
-import { logoutUser } from '~/appwrite/auth'
 import { sidebarItems } from '~/constants'
 import { cn } from "~/lib/utils"
 

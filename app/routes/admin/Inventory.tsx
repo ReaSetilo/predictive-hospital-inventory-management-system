@@ -10,8 +10,8 @@ const Inventory = () => {
         <Header
         title="Inventory Management"
         description="View and manage all inventory items in the system"
-        ctaText="place order"
-        ctaUrl="/inventory/order"
+        ctaText="Add inventory"
+        ctaUrl="/inventory/add"
       />
 
       

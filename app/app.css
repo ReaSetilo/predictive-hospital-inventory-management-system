@@ -69,6 +69,76 @@
 }
 
 @layer components {
+
+  .orders-container {
+    @apply flex gap-6 mt-6 flex-col md:flex-row;
+  }
+
+  .orders-list-panel {
+    @apply flex-1 bg-white rounded-xl p-4 shadow-sm;
+  }
+
+  .search-box {
+    @apply mb-4;
+  }
+
+  .orders-list {
+    @apply max-h-[500px] overflow-y-auto;
+  }
+
+  .order-list-item {
+    @apply p-3 border-b border-gray-200 cursor-pointer transition-colors duration-200 hover:bg-gray-50;
+  }
+
+  .order-list-header {
+    @apply flex justify-between font-semibold mb-1;
+  }
+
+  .order-no {
+    @apply text-gray-800;
+  }
+
+  .order-amount {
+    @apply text-green-700;
+  }
+
+  .order-list-details {
+    @apply text-sm text-gray-500 mb-1.5;
+  }
+
+  .order-status {
+    @apply inline-block px-2 py-0.5 rounded-full text-xs font-medium;
+  }
+
+  .order-status.confirmed {
+    @apply bg-green-100 text-green-800;
+  }
+
+  .order-status.pending {
+    @apply bg-yellow-100 text-yellow-800;
+  }
+
+  .order-details-panel {
+    @apply flex-1 bg-white rounded-xl p-5 shadow-sm;
+  }
+
+  .order-details-panel h2 {
+    @apply text-xl font-semibold mb-5 text-gray-900;
+  }
+
+  .order-details-card {
+    @apply flex flex-col gap-6;
+  }
+
+  .customer-section h3,
+  .order-section h3 {
+    @apply text-base font-semibold mb-3 text-gray-700;
+  }
+
+  .customer-section p,
+  .order-section p {
+    @apply text-sm leading-relaxed text-gray-600;
+  }
   .error {
     @apply text-red-500 text-base font-medium text-center;
   }
